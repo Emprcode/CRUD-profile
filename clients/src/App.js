@@ -1,5 +1,4 @@
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Title } from "./components/Title";
 import { SearchForm } from "./components/SearchForm.js";
 import { UserList } from "./components/UserList";
