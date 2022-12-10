@@ -37,7 +37,10 @@ router.post("/", async(req, res, next) => {
     message : "unable to create user"
   })
  } catch (error) {
-  
+  res.json({
+    status: "error",
+    message : error.message
+  })
  }
 });
 

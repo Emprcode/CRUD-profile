@@ -1,16 +1,22 @@
 import "./App.css";
-import { Title } from "./components/Title";
-import { SearchForm } from "./components/SearchForm.js";
-import { UserList } from "./components/UserList";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { ToastContainer } from 'react-toastify';
 import { useState } from "react";
+import { UserForm } from "./components/userForm/UserForm.js";
+import { fetchUsers } from "./axiosHelper";
 
 const App = () => {
-  const [list, setList] = useState([]);
+  const [userList, setUserList] = useState([]);
+
+  const getUsers = async () => {
+    const {users} = await fetchUsers();
+    setUserList(users)
+
+  }
   return (
     <div className="App">
-      <Title />
-      <SearchForm />
-      <UserList />
+    < UserForm   getUsers= {getUsers}/>
+    <  ToastContainer/>
     </div>
   );
 };
