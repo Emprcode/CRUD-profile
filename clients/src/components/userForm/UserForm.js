@@ -56,7 +56,6 @@ export const UserForm = ({ getUsers }) => {
       {inputFields.map((item, i) => {
         return <CustomInputField key={i} {...item} onChange={handleOnChange} />;
       })}
-
       <Button variant="primary" type="submit">
         Submit
       </Button>
